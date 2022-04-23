@@ -1,23 +1,23 @@
 import React from "react";
 import PropTypes from 'prop-types'
 import logo from "../img/logo.png";
-// import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 function Navbar(props) {
     return (
-        <nav className={`navbar navbar-expand-lg navbar-${props.mode} bg-${props.mode}`} >  {/* template laterals by writing in curly braces and backtick style={{border:'1px solid white'}} */}
+        <nav className={`navbar navbar-expand-lg navbar-${props.mode} bg-${props.mode}`} > 
             <div className="container-fluid">
             <img src={logo} alt="Logo" width="30" height="24"/>
-                <a className="navbar-brand" href="/">{props.title}</a>
+                <Link className="navbar-brand" to="/">{props.title}</Link>
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
                 </button>
                 <div className="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                         <li className="nav-item">
-                            {/* <a className="nav-link active" aria-current="page" href="/">{props.homepage}</a> */}
+                            <Link className="nav-link active" aria-current="page" to="/">{props.homepage}</Link>
                         </li>
                         <li className="nav-item">
-                            {/* <a className="nav-link" href="/about">{props.about}</a> */}
+                            <Link className="nav-link" to="/about">{props.about}</Link>
                         </li>
                     </ul>
                     <div className={`form-check form-switch text-${props.mode ==='dark'?'light':'dark'}`}>
